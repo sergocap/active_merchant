@@ -18,14 +18,14 @@ class RobokassaNotificationTest < Test::Unit::TestCase
   end
 
   # Replace with real successful acknowledgement code
-  def test_acknowledgement    
+  def test_acknowledgement
     assert @robokassa.acknowledge
   end
 
   def test_respond_to_acknowledge
     assert @robokassa.respond_to?(:acknowledge)
   end
-  
+
   def test_wrong_signature
     @robokassa = Robokassa::Notification.new(http_raw_data_with_wrong_signature, :secret => 'secret')
     assert !@robokassa.acknowledge
@@ -34,9 +34,9 @@ class RobokassaNotificationTest < Test::Unit::TestCase
   private
   def http_raw_data
     "InvId=123&OutSum=500&SignatureValue=277b232ef6891f07c9c0a4017113153b&shpMySuperParam=456&shpa=123"
-  end  
+  end
 
   def http_raw_data_with_wrong_signature
     "InvId=123&OutSum=500&SignatureValue=wrong&shpMySuperParam=456&shpa=123"
-  end  
+  end
 end

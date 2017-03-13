@@ -29,7 +29,7 @@ require 'active_support/core_ext/object/conversions'
 require 'active_support/core_ext/class/attribute'
 require 'active_support/core_ext/class/attribute_accessors'
 require 'active_support/core_ext/module/attribute_accessors'
-require 'active_utils'
+require 'validaetable'
 
 begin
   require 'active_support/base64'
